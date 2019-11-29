@@ -1,11 +1,11 @@
 <?php
  //session_start();
-include "include/connexion.php";
-include "Models/article.classe.php";
+include "../include/connexion.php";
+include "../models/article.class.php";
 
 //initialisation des parametres
 
-   	 $id_artcile="";
+   	 $id_article ="";
 	 $lib_article="";
 	 $prix_HT="";
 	 $TVA="";
@@ -14,14 +14,14 @@ include "Models/article.classe.php";
 	 $description_article="";
 	 $num_artcile="";
 
-	 $action="add1";
+	// $action="add1";
 
 //recupétation des variables externes
 if(isset($_REQUEST['action']))
 $action=$_REQUEST['action'];
 
 if(isset($_POST['id_artcile']))
-$id_artcile=$_POST['id_artcile'];
+$id_article =$_POST['id_artcile'];
 
 if(isset($_REQUEST['lib_article']))
 $lib_article=$_REQUEST['lib_article'];
