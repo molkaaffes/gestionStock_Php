@@ -50,8 +50,8 @@ $num_artcile=$_REQUEST['num_artcile'];
 //image
 if(isset($_FILES['photo_article']))
 {
-if(is_uploaded_file($_FILES['photo_article']['tmp_name']))
-{
+	if(is_uploaded_file($_FILES['photo_article']['tmp_name']))
+	{
 	if(!empty($photo_article))
 	unlink("../photos/".$photo_article);
 
@@ -68,7 +68,7 @@ if(is_uploaded_file($_FILES['photo_article']['tmp_name']))
 	$photo_article=$nom_photo.".".$ext;
 	
 	copy($_FILES['photo_article']['tmp_name'],'../photos/'.$photo_article);
-}
+	}
 }
 
 

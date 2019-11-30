@@ -2,13 +2,16 @@
 include_once "../models/fonctions.class.php";
 //initialisation des variables $controleur et $action 
 
-$controller='article'; 
+$controller='commande'; 
 $action='add';
 //var_dump($_REQUEST['controller']);
 //Recupération 
 
 if(isset($_REQUEST['controller'])) 
+{
     $controller =$_REQUEST['controller']; 
+    echo("test:".$controller);
+}
 if(isset($_REQUEST['action']))  
     $action =$_REQUEST['action']; ?> 
 <html>

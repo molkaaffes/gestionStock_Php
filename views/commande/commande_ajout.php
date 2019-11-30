@@ -4,7 +4,7 @@
 		<div class="row">
 			<ol class="breadcrumb">
 				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">Icons</li>
+				<li class="active">Home</li>
 			</ol>
 		</div><!--/.row-->
 		
@@ -29,7 +29,7 @@
 																
 								<div class="form-group">
 									<label>Date de Commande:</label>
-									<input class="form-control" type="date"  placeholder="Placeholder">
+									<input class="form-control" type="date" name="date_commande" placeholder="Placeholder">
 								</div>
 								
 								<div class="form-group">
@@ -44,7 +44,7 @@
 								
 								<div class="form-group">
 									<label>Adresse livraison:</label>
-									<input class="form-control"  placeholder="Placeholder">
+									<input class="form-control" name="adresse_livraison" placeholder="Placeholder">
 								</div>
 																
 							
@@ -54,7 +54,7 @@
 							
 								<div class="form-group">
 									<label>Numero d'article:</label>
-									<input class="form-control"  type="number" placeholder="Placeholder">
+									<input class="form-control"   placeholder="Placeholder">
 								</div>
 								
 							<div class="form-group">
