@@ -54,8 +54,16 @@ $mat_fiscale=$_POST['mat_fiscale'];
 $client=new client($id_client,$num_tel,$adr_client,$type_id,$id_personne,$mat_client,$nom_client,$prenom_client,$id_societe,$mat_fiscale);
 
 switch($action){
-	case "liste":$res=$client->getAll($cnx);
+	case "listeClient":$res=$client->getAll($cnx);
 	include "Views/client/client_liste.php";
+	break;
+
+	case "listePhysique":$res=$client->getAll($cnx);
+	include "Views/client/clientPhysique_liste.php";
+	break;
+
+	case "listeSociete":$res=$client->getAll($cnx);
+	include "Views/client/clientSociete_liste.php";
 	break;
 	
 	case "add":$client->add($cnx);

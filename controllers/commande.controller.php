@@ -1,7 +1,7 @@
 <?php
  //session_start();
-include "../include/connexion.php";
-include "../models/commande.class.php";
+include "include/connexion.php";
+include "models/commande.class.php";
 
 //initialisation des parametres
  	 $id_commande="";
@@ -28,10 +28,14 @@ $commande=new commande($id_commande,$date_commande,$adresse_livraison);
 
 switch($action){
 	case "liste":$res=$commande->liste($cnx);
-	include "../views/commande/commande_liste.php";
+	include "views/commande/commande_liste.php";
 	break;
 	
 	case "add":$commande->add($cnx);
+	break;
+
+	case "afficheForm":$commande->add($cnx);
+	include "views/commande/commande_ajout.php";
 	break;
 
 	case "edit":$commande->edit($cnx);

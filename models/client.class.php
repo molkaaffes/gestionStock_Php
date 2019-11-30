@@ -44,7 +44,7 @@ public function __construct($id_client,$num_tel,$adr_client,$type_id,$id_personn
 		echo $nb.' membres ont été supprimés.';	
 		header("location:controller.php?action=liste");*/
 	}
-	public function liste($cnx)
+	public function getAll($cnx)
 	{
 		$query = 'SELECT * FROM client';
 		$tab=$cnx->query($query)->fetchAll(PDO::FETCH_OBJ);

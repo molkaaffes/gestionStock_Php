@@ -1,5 +1,5 @@
 <?php
-class Article  extends fonction
+class Article  
 {
 	private $id_artcile;
 	private $lib_article;

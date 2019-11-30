@@ -1,9 +1,9 @@
 <?php
  //session_start();
-include "../include/connexion.php";
-include "../models/article.class.php";
-include_once "../models/fonctions.class.php";
-//require_once('../models/fonction.class.php');
+include "include/connexion.php";
+include "models/article.class.php";
+include_once "models/fonction.class.php";
+//require_once('models/fonction.class.php');
 
 //initialisation des parametres
 $tab_ext=array('jpg','png','gif');
@@ -77,10 +77,14 @@ $article=new article($id_article,$lib_article,$prix_HT,$TVA,$qte_article,$photo_
 
 switch($action){
 	case "liste":$res=$article->liste($cnx);
-	include "..\..\views\article\article_liste.php";
+	include "views/article/article_liste.php";
 	break;
 	
 	case "add":$article->add($cnx);
+	break;
+
+	case "afficheForm":$article->add($cnx);
+	include "views/article/article_ajout.php";
 	break;
 
 	case "edit":$article->edit($cnx);

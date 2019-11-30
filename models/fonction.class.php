@@ -1,4 +1,4 @@
-<?php class fonction
+<?php class Fonction
 {
 	
 public function generer_chaine($size)

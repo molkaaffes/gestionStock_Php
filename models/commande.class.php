@@ -20,7 +20,7 @@ public function __construct($id_commande,$date_commande,$adresse_livraison)
 	{
 		$cnx -> exec("insert into commande (date_commande,adresse_livraison) values('".$this->date_commande."','".$this->adresse_livraison."')");	
 		
-		header("location:../controllers/commande.controller.php?action=liste");
+	
 		
 	}
 	public function supp($cnx)
