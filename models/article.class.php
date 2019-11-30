@@ -1,5 +1,5 @@
 <?php
-class Article
+class Article  extends fonction
 {
 	private $id_artcile;
 	private $lib_article;
@@ -38,6 +38,7 @@ public function __construct($id_article,$lib_article,$prix_HT,$TVA,$qte_article,
 		$sql = "DELETE FROM article WHERE email= 'dodo@gmail.com'";
 		$nb = $cnx->exec($sql);
 		echo $nb.' membres ont été supprimés.';	
+		unlink("photos/".$this->photo);
 		header("location:controller.php?action=liste");*/
 	}
 	public function liste($cnx)

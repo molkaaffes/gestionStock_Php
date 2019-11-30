@@ -1,14 +1,14 @@
 <?php
  //session_start();
-include "include/connexion.php";
-include "Models/commande.classe.php";
+include "../include/connexion.php";
+include "../models/commande.classe.php";
 
 //initialisation des parametres
- 	 $id_commande;
-	 $date_commande;
-	 $adresse_livraison;
+ 	 $id_commande="";
+	 $date_commande="";
+	 $adresse_livraison="";
 
- $action="add1";
+ //$action="add1";
 
 //recupétation des variables externes
 if(isset($_REQUEST['action']))
@@ -24,11 +24,11 @@ if(isset($_POST['adresse_livraison']))
 $adresse_livraison=$_POST['adresse_livraison'];
 
 //creation de l'objet
-$Commande=new commande($id_commande,$date_commande,$adresse_livraison);
+$commande=new commande($id_commande,$date_commande,$adresse_livraison);
 
 switch($action){
-	case "liste":$res=$Commande->getAll($cnx);
-	include "Views/Commande/Commande_liste.php";
+	case "liste":$res=$commande->getAll($cnx);
+	include "../views/commande/commande_liste.php";
 	break;
 	
 	case "add":$Commande->add($cnx);

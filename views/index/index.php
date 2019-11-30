@@ -8,7 +8,7 @@
 				<li class="active">Icons</li>
 			</ol>
 		</div><!--/.row-->
-		saadiya
+		
 		
 		<div class="row">
 			<div class="col-lg-12">
@@ -72,7 +72,7 @@
 		</div><!--/.row-->
 		
 		
-	
+	<img src="../../photos/gestion.png" style="padding-left: 20vw;">
 		
 								
 	

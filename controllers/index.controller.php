@@ -1,5 +1,5 @@
 <?php include_once '../include/connexion.php'; 
-
+include_once "../models/fonctions.class.php";
 //initialisation des variables $controleur et $action 
 
 $controller='article'; 

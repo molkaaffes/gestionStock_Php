@@ -1,4 +1,4 @@
-<?php include('header.php') ?>
+<?php include('../../include/header.php') ?>
 		
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
@@ -10,7 +10,7 @@
 		
 		<div class="row">
 			<div class="col-lg-12">
-				<h1 class="page-header">Ajout Commande</h1>
+				<h1 class="page-header">Ajout d'une Commande</h1>
 			</div>
 		</div><!--/.row-->
 				
@@ -20,7 +20,7 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<div class="col-md-6">
-							<form role="form">
+							<form role="form" action="../../controllers/index.controller.php" method="post"  controller="commande" enctype="multipart/form-data">
 							
 								<div class="form-group">
 									<label>Numéro Commande:</label>
@@ -65,7 +65,7 @@
 								
 								
 								
-								<button  type="submit" class="btn btn-primary">Submit Button</button>
+								<button  type="submit" class="btn btn-primary" value="Submit Button">Submit Button</button>
 								<button  type="reset" class="btn btn-default">Reset Button</button>
 							</div>
 						</form>
@@ -75,4 +75,4 @@
 		</div><!-- /.row -->
 		
 	</div><!--/.main-->
-<?php include('footer.php') ?>
+	<?php include('../../include/footer.php') ?>
