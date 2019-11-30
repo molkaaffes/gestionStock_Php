@@ -3,8 +3,8 @@
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
 			<ol class="breadcrumb">
-				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
-				<li class="active">Icons</li>
+				<li><a href="../index/index.php"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+				<li class="active">Home</li>
 			</ol>
 		</div><!--/.row-->
 		
@@ -17,10 +17,9 @@
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
-					<div class="panel-heading">Form Elements</div>
 					<div class="panel-body">
 						<div class="col-md-6">
-<form role="form" action="../../controllers/index.controller.php" method="post"  controller="article">
+<form role="form" action="../../controllers/index.controller.php" method="post"  controller="article" enctype="multipart/form-data">
 
 								<div class="form-group">
 									<label>Numéro Article:</label>
@@ -64,7 +63,7 @@
 								<div class="form-group">
 									<label>photo de l'article</label>
 									<input name="photo_article" type="file">
-									 <p class="help-block">Choisir un fichier .png,.jpeg,.gif....</p>
+									 <p class="help-block">Choisir un fichier .png,.jpg,.gif</p>
 								</div>
 								
 							

@@ -20,7 +20,7 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<div class="col-md-6">
-							<form role="form">
+							<form role="form" action="../../controllers/index.controller.php" method="post"  controller="commande" enctype="multipart/form-data">
 							
 								<div class="form-group">
 									<label>Numéro Commande:</label>
@@ -65,7 +65,7 @@
 								
 								
 								
-								<button  type="submit" class="btn btn-primary">Submit Button</button>
+								<button  type="submit" class="btn btn-primary" value="Submit Button">Submit Button</button>
 								<button  type="reset" class="btn btn-default">Reset Button</button>
 							</div>
 						</form>
