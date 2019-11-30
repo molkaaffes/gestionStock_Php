@@ -20,7 +20,7 @@
 			<div class="col-lg-12">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<table class="table table-bordered" data-toggle="table"   data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true" data-sort-name="name" data-sort-order="desc">
+						<table class="table table-bordered" data-toggle="tablee"   data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true"  data-pagination="true" data-sort-name="name" data-sort-order="desc">
 						    <thead>
 						    <tr>
 						        <th data-field="num" data-checkbox="true" >Numéro</th>
@@ -30,20 +30,26 @@
 								<th data-field="tRemise" data-sortable="true">Taux de remise</th>
 						        <th data-field="qte" data-sortable="true">Quantité</th>
 								<th data-field="categ" data-sortable="true">Catégorie</th>
+								<th data-field="categ" data-sortable="true">Action</th>
 						    </tr>							
 							</thead>
 	
 							<?php  
+							//var_dump($res);
 							foreach($res as $article){
 							?>		
 							<tr>
+							<td><?php echo $article->num_artcile; ?></td>
 							<td> <?php echo $article->lib_article; ?></td>
-							<td>Art1</td>
-							<td>1,520</td>
-							<td>1,14</td>
-							<td>2%</td>
-							<td>100</td>
-							<td>Santé</td>
+							<td><?php echo $article->prix_HT; ?></td>
+							<td><?php echo $article->TVA; ?></td>
+							<td><?php echo "2%"; ?></td>
+							<td><?php echo $article->qte_article; ?></td>
+							<td><?php echo "Santé"; ?></td>
+							<td>
+							<a href="index.controller.php?controller=article&action=showEdit&id=<?php echo $article->id; ?>">Edit</a>
+							<a href="index.controller.php?controller=article&action=delete&id=<?php echo $article->id; ?>">delte</a>
+							</td>
 							</tr>
 							<?php } ?>
 						</table>

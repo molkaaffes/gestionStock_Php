@@ -13,7 +13,13 @@ if(isset($_REQUEST['controller']))
     echo("test:".$controller);
 }
 if(isset($_REQUEST['action']))  
-    $action =$_REQUEST['action']; ?> 
+    $action =$_REQUEST['action'];
+
+if(isset($_REQUEST['id']))  
+    $id =$_REQUEST['id']; 
+    
+ ?> 
+ 
 <html>
 <head>
 </head>

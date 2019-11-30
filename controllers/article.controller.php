@@ -26,6 +26,9 @@ $action=$_REQUEST['action'];
 if(isset($_POST['id_artcile']))
 $id_article =$_POST['id_artcile'];
 
+if(isset($_REQUEST['id']))  
+	$id =$_REQUEST['id']; 
+	
 if(isset($_REQUEST['lib_article']))
 $lib_article=$_REQUEST['lib_article'];
 
@@ -53,7 +56,7 @@ if(isset($_FILES['photo_article']))
 	if(is_uploaded_file($_FILES['photo_article']['tmp_name']))
 	{
 	if(!empty($photo_article))
-	unlink("../photos/".$photo_article);
+	unlink("photos/Articles".$photo_article);
 
 	$photo_article=$_FILES['photo_article']['name'];
 	$tab=explode('.',$photo_article);
@@ -67,7 +70,7 @@ if(isset($_FILES['photo_article']))
 	
 	$photo_article=$nom_photo.".".$ext;
 	
-	copy($_FILES['photo_article']['tmp_name'],'../photos/'.$photo_article);
+	copy($_FILES['photo_article']['tmp_name'],'photos/Articles/'.$photo_article);
 	}
 }
 
@@ -83,8 +86,12 @@ switch($action){
 	case "add":$article->add($cnx);
 	break;
 
-	case "afficheForm":$article->add($cnx);
+	case "afficheForm":
 	include "views/article/article_ajout.php";
+	break;
+
+	case "showEdit":$res=$article->findOne($id,$cnx);
+	include "views/article/article_edit.php";
 	break;
 
 	case "edit":$article->edit($cnx);

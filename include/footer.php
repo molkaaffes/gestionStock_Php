@@ -7,6 +7,7 @@
 	<script src="js/easypiechart.js"></script>
 	<script src="js/easypiechart-data.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
+	<script>document.foo.submit();</script>
 	<script src="js/bootstrap-table.js"></script>
 	<script>
 		!function ($) {
