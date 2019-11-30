@@ -14,7 +14,7 @@
 			</div>
 		</div><!--/.row-->
 				
-		
+<form action="article.controller.php" method="post" enctype="multipart/form-data">
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
@@ -31,8 +31,12 @@
 								<th data-field="categ" data-sortable="true">Catégorie</th>
 						    </tr>							
 							</thead>
+	
+							<?php  
+							foreach($res as $article){
+							?>		
 							<tr>
-							<td>A001</td>
+							<td> <?php echo $article->lib_article; ?></td>
 							<td>Art1</td>
 							<td>1,520</td>
 							<td>1,14</td>
@@ -40,13 +44,14 @@
 							<td>100</td>
 							<td>Santé</td>
 							</tr>
+							<?php } ?>
 						</table>
 					</div>
 				</div>
 			</div>
 		</div><!--/.row-->	
 		
-						
+							</form>
 		
 		
 	</div><!--/.main-->

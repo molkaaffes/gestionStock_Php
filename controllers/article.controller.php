@@ -48,8 +48,8 @@ $num_artcile=$_REQUEST['num_artcile'];
 $article=new article($id_article,$lib_article,$prix_HT,$TVA,$qte_article,$photo_article,$description_article,$num_artcile);
 
 switch($action){
-	case "liste":$res=$article->getAll($cnx);
-	include "Views/artile/article_liste.php";
+	case "liste":$res=$article->liste($cnx);
+	include "..\..\views\article\article_liste.php";
 	break;
 	
 	case "add":$article->add($cnx);
