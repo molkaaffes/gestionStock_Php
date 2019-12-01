@@ -15,14 +15,16 @@ include "Models/client.class.php";
 	 $id_societe="";
 	 $mat_fiscale="";
 	 $nom_societe="";
+	 
 
 
 //recupétation des variables externes
 if(isset($_REQUEST['action']))
 $action=$_REQUEST['action'];
 
-if(isset($_POST['id']))
-$id_client=$_POST['id'];
+if(isset($_REQUEST['id']))
+$id=$_REQUEST['id'];
+
 
 if(isset($_POST['num_tel']))
 $num_tel=$_POST['num_tel'];
@@ -82,8 +84,6 @@ switch($action){
 	include "Views/client/clientSociete_ajout.php";
 	break;
 
-	case "add":$client->add($cnx);
-	break;
 
 	case "edit":$client->edit($cnx);
 	

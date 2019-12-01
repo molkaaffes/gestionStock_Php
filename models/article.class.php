@@ -31,7 +31,7 @@ public function __construct($id_article,$lib_article,$prix_HT,$TVA,$qte_article,
 		$cnx -> exec("insert into article (lib_article,prix_HT, TVA,qte_article,photo_article,description_article,num_artcile ) values('".$this->lib_article."','".$this->prix_HT."','".$this->TVA."','".$this->qte_article."','".$this->photo_article."','".$this->description_article."','".$this->num_artcile."')");	
 		$query = 'SELECT * FROM article';
 		$tab=$cnx->query($query)->fetchAll(PDO::FETCH_OBJ);
-		include "views/article/article_ajout.php";
+		include "Views/client/client_liste.php";
 		//return View("views/article_liste.php", tab);
 		//return RedirectToAction("liste");
 		//header("location:index.controller.php?action=afficheForm&controller=article");

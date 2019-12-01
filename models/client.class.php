@@ -34,25 +34,18 @@ public function __construct($id,$num_tel,$adr_client,$type_id,$mat_fiscale,$id_p
 	public function add($cnx)
 	{
 		$cnx -> exec("insert into client (num_tel,adr_client, type_id,mat_fiscale,mat_client,nom_client,prenom_client,nom_societe ) 
-		values('".$this->num_tel."','".$this->adr_client."','".$this->type_id."','".$this->mat_fiscale."','".$this->mat_client."','".$this->nom_client."','".$this->prenom_client."','".$this->nom_societe."')");	
+		values('".$this->num_tel."','".$this->adr_client."','".$this->type_id."','".$this->mat_fiscale."','".$this->mat_client."','"
+		.$this->nom_client."','".$this->prenom_client."','".$this->nom_societe."')");	
 		
 	}
 
 
-
-	
 	public function supp($cnx)
 	{
-		//$sql="delete from client where mat_fiscale=0 ";
-	
 		$sql =("delete from client where id='".$this->id."'");
-		//$this->redirect("index.php?controller=inscrit&action=liste");
-
-		echo($this->id);
-		// $sql = "DELETE FROM client WHERE id= 77";
 		$nb = $cnx->exec($sql);
 		echo $nb.' membres ont été supprimés.';	
-		//header("location:controller.php?action=liste");
+		header("location:index.controller.php?controller=client&action=listeClient");
 	}
 	public function getAll($cnx)
 	{
@@ -70,11 +63,10 @@ public function detail($cnx)
 	}
 	public function edit($cnx)
 	{
-			$req="update  client set `num_tel` = '".$this->num_tel."' , `adr_client` = '".$this->adr_client."' , `type_id` = '".$this->type_id."' , `mat_fiscale` = '".$this->mat_fiscale."' , `mat_client` = '".$this->mat_client."' , `nom_client` = '".$this->nom_client."' , `prenom_client` = '".$this->prenom_client."' where id = ".$this->id;
+			$req="update  client set `num_tel` = '".$this->num_tel."' , `adr_client` = '".$this->adr_client."' , `type_id` = '".$this->type_id.
+			"' , `mat_fiscale` = '".$this->mat_fiscale."' , `mat_client` = '".$this->mat_client."' , `nom_client` = '".$this->nom_client."' , `prenom_client` = '".$this->prenom_client."' where id = ".$this->id;
  
-		 $cnx->exec($req) ;
-		// header("location:controller.php?action=liste");
- 
+		 $cnx->exec($req) ; 
 		
 	}
 

@@ -14,7 +14,7 @@
 				<div class="panel-heading">Ajout d'une société</div>
 					<div class="panel-body">
 						<div class="col-md-6">
-							<form role="form"  method="post" action="index.controller.php?action=add&controller=client" controller="client" enctype="multipart/form-data">
+							<form role="form"  method="post" action="index.controller.php?action=afficheForm&controller=client" controller="client" enctype="multipart/form-data">
 							
 								<div class="form-group">
 									<label>Nom Société:</label>
