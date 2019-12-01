@@ -27,7 +27,7 @@
 								 
 								   <th colspan="3" scope="colgroup">Information commune</th>
 								   <th colspan="3" scope="colgroup">Personne physique</th>
-								   <th colspan="1" scope="colgroup">Société</th>
+								   <th colspan="2" scope="colgroup">Société</th>
 								</tr>
 								 <tr>
 								   <th>Numéro</th>
@@ -37,17 +37,26 @@
 								   <th scope="col">Nom</th>
 								   <th scope="col">Prénom</th>
 								   <th scope="col">Matricule Fiscale</th>
+								   <th scope="col">Nom Societé</th>
 								 </tr>					
 							</thead>
+							<?php foreach ($res as $client) { ?>
 							<tr>
-							<td>A001</td>
-							<td>Art1</td>
-							<td>1,520</td>
-							<td>1,14</td>
-							<td>2%</td>
-							<td>100</td>
-							<td>Santé</td>
-							</tr>
+							<td><?php echo $client->id; ?></td>
+							<td><?php echo $client->num_tel; ?></td>
+							<td><?php echo $client->adr_client; ?></td>
+							<td><?php echo $client->mat_client; ?></td>
+							<td><?php echo $client->nom_client; ?></td>
+							<td><?php echo $client->prenom_client; ?></td>
+							<td><?php echo $client->mat_fiscale; ?></td>
+							<td><?php echo $client->nom_societe; ?></td>
+						
+							<td>
+							<a href="">Edit</a>
+							<a href="index.controller.php?controller=client&action=supp&id=<?php echo $client->id; ?>"> delete</a>
+							</td>
+							</tr>					
+								<?php }?>
 						</table>
 					</div>
 				</div>

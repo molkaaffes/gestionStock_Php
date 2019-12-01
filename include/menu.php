@@ -11,19 +11,30 @@
 
 			<li><a href="index.controller.php?action=afficheForm&controller=article"><img src="photos/ajoutArticle.png" width="15vw" height="15vh"></img> Ajout Artcile</a></li>
 
-			<li><a href="views/facture/facture.php"><img src="photos/facture.png" width="15vw" height="15vh"></img> Facture</a></li>
+			<!-- <li><a href="views/facture/facture.php"><img src="photos/facture.png" width="15vw" height="15vh"></img> Facture</a></li> -->
 
 			<li><a href="index.controller.php?action=afficheForm&controller=commande"><img src="photos/commande.png" width="15vw" height="15vh"></img> Ajouter Commande</a></li>
 
 			<li><a href="index.controller.php?action=liste&controller=commande"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg> Liste Commande</a></li> 
 			<!--<li><a href="icons.html"><img src="../photos/bonLivraison.png" width="15vw" height="15vh"></img> Bon de livraison</a></li>-->
 			
-			
 			<li class="parent ">
-				<a href="index.controller.php?action=listeClient&controller=client">
-					<span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Liste des clients 
+				<a href="#">
+					<span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Gestion des clients 
 				</a>
 				<ul class="children collapse" id="sub-item-1">
+					<li>
+						<a class="" href="index.controller.php?action=afficheForm&controller=client">
+							<img src="photos/client.png" width="15vw" height="15vh"></img>Ajouter Client 
+						</a>
+					</li>
+					
+
+					<li class="parent ">
+				<a href="index.controller.php?action=listeClient&controller=client">
+					<span data-toggle="collapse" href="#sub-item-2"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Liste des clients 
+				</a>
+				<ul class="children collapse" id="sub-item-2">
 					<li>
 						<a class="" href="index.controller.php?action=listePhysique&controller=client">
 							<img src="photos/client.png" width="15vw" height="15vh"></img> Client physique
@@ -37,11 +48,15 @@
 				</ul>
 			</li>
 
+				</ul>
+			</li>
+			
+
 			<li class="parent ">
 				<a href="#">
-					<span data-toggle="collapse" href="#sub-item-2"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Réglements 
+					<span data-toggle="collapse" href="#sub-item-3"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Réglements 
 				</a>
-				<ul class="children collapse" id="sub-item-2">
+				<ul class="children collapse" id="sub-item-3">
 					<li>
 						<a class="" href="#">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Liste des réglements
@@ -49,17 +64,17 @@
 					</li>
 					<li>
 						<a class="" href="#">
-							<img src="../photos/espece.png" width="15vw" height="15vh"></img> Réglement par espéce
+							<img src="photos/espece.png" width="15vw" height="15vh"></img> Réglement par espéce
 						</a>
 					</li>
 					<li>
 						<a class="" href="#">
-							<img src="../photos/cheque.png" width="15vw" height="15vh"></img> Réglement par chéque
+							<img src="photos/cheque.png" width="15vw" height="15vh"></img> Réglement par chéque
 						</a>
 					</li>
 					<li>
 						<a class="" href="#">
-							<img src="../photos/traite.png" width="15vw" height="15vh"></img> Réglement par traite
+							<img src="photos/traite.png" width="15vw" height="15vh"></img> Réglement par traite
 						</a>
 					</li>
 				</ul>

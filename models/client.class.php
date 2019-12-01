@@ -1,7 +1,7 @@
 <?php
 class Client
 {
-	private $id_client;
+	private $id;
 	private $num_tel;
 	private $adr_client;
 	private $type_id;
@@ -11,11 +11,12 @@ class Client
 	private $prenom_client;
 	private $id_societe;
 	private $mat_fiscale;
+	private $nom_societe;
 
 
-public function __construct($id_client,$num_tel,$adr_client,$type_id,$id_personne,$mat_client,$nom_client,$prenom_client,$id_societe,$mat_fiscale)
+public function __construct($id,$num_tel,$adr_client,$type_id,$mat_fiscale,$id_personne,$mat_client,$nom_client,$prenom_client,$id_societe,$nom_societe)
 	{
-		$this->id_client=$id_client;
+		$this->id=$id;
 		$this->num_tel=$num_tel; 
 		$this->adr_client=$adr_client;
 		$this->type_id=$type_id;
@@ -27,22 +28,31 @@ public function __construct($id_client,$num_tel,$adr_client,$type_id,$id_personn
 		
 		$this->id_societe=$id_societe; 
 		$this->mat_fiscale=$mat_fiscale; 
+		$this->nom_societe=$nom_societe; 
 	}
 	
 	public function add($cnx)
 	{
-		$cnx -> exec("insert into client (num_tel,adr_client, type_id,mat_fiscale,mat_client,nom_client,prenom_client ) values('".$this->num_tel."','".$this->adr_client."','".$this->type_id."','".$this->mat_fiscale."','".$this->mat_client."','".$this->nom_client."','".$this->prenom_client."')");	
-		
-		//header("location:controller.php?action=liste");
+		$cnx -> exec("insert into client (num_tel,adr_client, type_id,mat_fiscale,mat_client,nom_client,prenom_client,nom_societe ) 
+		values('".$this->num_tel."','".$this->adr_client."','".$this->type_id."','".$this->mat_fiscale."','".$this->mat_client."','".$this->nom_client."','".$this->prenom_client."','".$this->nom_societe."')");	
 		
 	}
+
+
+
+	
 	public function supp($cnx)
 	{
-		/*
-		$sql = "DELETE FROM client WHERE email= 'dodo@gmail.com'";
+		//$sql="delete from client where mat_fiscale=0 ";
+	
+		$sql =("delete from client where id='".$this->id."'");
+		//$this->redirect("index.php?controller=inscrit&action=liste");
+
+		echo($this->id);
+		// $sql = "DELETE FROM client WHERE id= 77";
 		$nb = $cnx->exec($sql);
 		echo $nb.' membres ont été supprimés.';	
-		header("location:controller.php?action=liste");*/
+		//header("location:controller.php?action=liste");
 	}
 	public function getAll($cnx)
 	{
