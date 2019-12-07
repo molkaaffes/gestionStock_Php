@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  ven. 29 nov. 2019 à 20:21
--- Version du serveur :  10.4.6-MariaDB
--- Version de PHP :  7.3.9
+-- Généré le :  sam. 07 déc. 2019 à 09:46
+-- Version du serveur :  10.1.38-MariaDB
+-- Version de PHP :  7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -36,8 +36,20 @@ CREATE TABLE `article` (
   `qte_article` int(11) NOT NULL,
   `photo_article` varchar(50) NOT NULL,
   `description_article` varchar(300) NOT NULL,
-  `num_artcile` varchar(10) NOT NULL
+  `num_artcile` varchar(10) NOT NULL,
+  `id_remise` int(10) NOT NULL,
+  `id_cat` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `article`
+--
+
+INSERT INTO `article` (`id`, `lib_article`, `prix_HT`, `TVA`, `qte_article`, `photo_article`, `description_article`, `num_artcile`, `id_remise`, `id_cat`) VALUES
+(129, 'article algesic', 9, 2, 10, 'pY0h3Bc5.png', 'medicament', 'A001', 0, 0),
+(130, 'AZERTYU', 0, 0, 0, '', '', '', 0, 0),
+(131, 'AZERTYU', 0, 0, 0, '', '', '', 0, 0),
+(134, '', 0, 0, 0, '', '', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -46,7 +58,9 @@ CREATE TABLE `article` (
 --
 
 CREATE TABLE `bon_livraison` (
-  `id` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `id_commande` int(10) NOT NULL,
+  `text` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -59,6 +73,14 @@ CREATE TABLE `categorie` (
   `id` int(11) NOT NULL,
   `lib_categorie` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `categorie`
+--
+
+INSERT INTO `categorie` (`id`, `lib_categorie`) VALUES
+(1, 'santé'),
+(2, 'autre');
 
 -- --------------------------------------------------------
 
@@ -86,7 +108,8 @@ CREATE TABLE `client` (
 CREATE TABLE `commande` (
   `id` int(11) NOT NULL,
   `date_commande` date NOT NULL,
-  `adresse_livraison` varchar(100) NOT NULL
+  `adresse_livraison` varchar(100) NOT NULL,
+  `id_client` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -100,7 +123,8 @@ CREATE TABLE `details_commande` (
   `qte_commande` int(11) NOT NULL,
   `prix_unitaire` float NOT NULL,
   `taux_remise_accorde` float NOT NULL,
-  `TVA` float NOT NULL
+  `TVA` float NOT NULL,
+  `id_commande` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -115,7 +139,11 @@ CREATE TABLE `facture` (
   `date_facture` date NOT NULL,
   `adr_facture` varchar(100) NOT NULL,
   `solde_facture` double NOT NULL,
-  `etat_facture` char(1) NOT NULL
+  `etat_facture` char(1) NOT NULL,
+  `tot_hors_tax` int(11) NOT NULL,
+  `mnt_tva` int(11) NOT NULL,
+  `totale_facture` int(11) NOT NULL,
+  `tombre` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -145,6 +173,16 @@ CREATE TABLE `remise` (
   `id` int(11) NOT NULL,
   `taux_remise` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `remise`
+--
+
+INSERT INTO `remise` (`id`, `taux_remise`) VALUES
+(1, '2%'),
+(2, '5%'),
+(3, '6%'),
+(4, '8%');
 
 --
 -- Index pour les tables déchargées
@@ -212,7 +250,7 @@ ALTER TABLE `remise`
 -- AUTO_INCREMENT pour la table `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
 -- AUTO_INCREMENT pour la table `bon_livraison`
@@ -224,7 +262,7 @@ ALTER TABLE `bon_livraison`
 -- AUTO_INCREMENT pour la table `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `client`
@@ -260,7 +298,7 @@ ALTER TABLE `reglement`
 -- AUTO_INCREMENT pour la table `remise`
 --
 ALTER TABLE `remise`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

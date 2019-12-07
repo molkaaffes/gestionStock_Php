@@ -35,14 +35,15 @@ public function __construct($id_article,$lib_article,$prix_HT,$TVA,$qte_article,
 		//return View("views/article_liste.php", tab);
 		//return RedirectToAction("liste");
 		//header("location:index.controller.php?action=afficheForm&controller=article");
-		return Redirect::back()->with('msg', 'succs');
+	//	return Redirect::back()->with('msg', 'succs');
 		
 	}
 	public function supp($cnx)
 	{
-		/*
-		$sql = "DELETE FROM article WHERE email= 'dodo@gmail.com'";
-		$nb = $cnx->exec($sql);
+	
+		$sql = "DELETE FROM article WHERE where id='.$this->id";
+		$cnx->exec($sql) ;
+		/*$nb = $cnx->exec($sql);
 		echo $nb.' membres ont été supprimés.';	
 		unlink("photos/".$this->photo);
 		header("location:controller.php?action=liste");*/
