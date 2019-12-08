@@ -57,7 +57,7 @@ public function __construct($id_article,$lib_article,$prix_HT,$TVA,$qte_article,
 		return $tab;
 		
 	}
-public function findOne($id,$cnx)
+	public function findOne($id,$cnx)
 	{
 		$query = 'SELECT * FROM article where id='.$id ;
 		$tab=$cnx->query($query)->fetch(PDO::FETCH_OBJ);

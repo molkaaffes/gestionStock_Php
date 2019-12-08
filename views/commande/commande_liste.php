@@ -40,7 +40,12 @@
 							<td><?php echo $commande->adresse_livraison; ?></td>
 							<td>Art001</td>
 							<td>6</td>
-							<td><input type="button" name="modifier" value="modifier" onclick="window.location.href='controller.php?action=edit1&id=<?php echo $commande->id; ?>'"></td>
+
+
+							<td>
+							<a href="index.controller.php?controller=article&action=showEdit&id=<?php echo $commande->id; ?>">Edit</a>
+							<a href="index.controller.php?controller=article&action=delete&id=<?php echo $commande->id; ?>">delte</a>
+							</td>
 							</tr>
 								<?php }?>
 						 

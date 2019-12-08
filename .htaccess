@@ -1,0 +1,14 @@
+Options +FollowSymlinks 
+RewriteEngine On 
+RewriteCond %{HTTP_REFERER} !^http://localhost|http://127.0.0.1
+RewriteRule ^.*\.png|jpg|gif|css|js$ -[F]
+
+AuthName "Authentification!"
+AuthType Basic 
+AuthUserFile "C:/xampp/htdocs/gestionStock_Php/.htpasswd" 
+Require valid-user 
+
+
+
+
+

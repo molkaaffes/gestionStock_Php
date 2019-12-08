@@ -8,13 +8,10 @@ include "Models/client.class.php";
 	 $num_tel="";
 	 $adr_client="";
 	 $type_id="";
-	 $id_personne="";
 	 $mat_client="";
 	 $nom_client="";
 	 $prenom_client="";
-	 $id_societe="";
 	 $mat_fiscale="";
-	 $nom_societe="";
 	 
 
 
@@ -35,8 +32,7 @@ $adr_client=$_POST['adr_client'];
 if(isset($_POST['type_id']))
 $type_id=$_POST['type_id'];
 
-if(isset($_POST['id_personne']))
-$id_personne=$_POST['id_personne'];
+
 
 if(isset($_POST['mat_client']))
 $mat_client=$_POST['mat_client'];
@@ -47,46 +43,52 @@ $nom_client=$_POST['nom_client'];
 if(isset($_POST['prenom_client']))
 $prenom_client=$_POST['prenom_client'];
 
-if(isset($_POST['id_societe']))
-$id_societe=$_POST['id_societe'];
+
 
 if(isset($_POST['mat_fiscale']))
 $mat_fiscale=$_POST['mat_fiscale'];
 
-if(isset($_POST['nom_societe']))
-$nom_societe=$_POST['nom_societe'];
 
 //creation de l'objet
-$client=new client($id,$num_tel,$adr_client,$type_id,$mat_fiscale,$id_personne,$mat_client,$nom_client,$prenom_client,$id_societe,$nom_societe);
+$client=new client($id,$num_tel,$adr_client,$type_id,$mat_fiscale,$mat_client,$nom_client,$prenom_client);
 
 switch($action){
 	case "listeClient":$res=$client->getAll($cnx);
 	include "Views/client/client_liste.php";
 	break;
 
-	// case "listePhysique":$res=$client->getAll($cnx);
-	// include "Views/client/clientPhysique_liste.php";
-	// break;
+	case "listePhysique":$res=$client->getAll($cnx);
+	include "Views/client/clientPhysique_liste.php";
+	break;
 
-	// case "listeSociete":$res=$client->getAll($cnx);
-	// include "Views/client/clientSociete_liste.php";
-	// break;
+	case "listeSociete":$res=$client->getAll($cnx);
+	include "Views/client/clientSociete_liste.php";
+	break;
 
 	case "afficheForm":
 	include "Views/client/client_ajout.php";
 	break;
 	
-	case "ajoutPhysique":$client->add($cnx);
+	case "ajoutPhysique":$client->addPersonne($cnx);
 	include "Views/client/clientPhysique_ajout.php";
 	break;
 
-	case "ajoutSociete":$client->add($cnx);
+	case "ajoutSociete":$client->addSociete($cnx);
 	include "Views/client/clientSociete_ajout.php";
 	break;
 
+	case "showEdit":$res=$client->findOne($cnx);
+	include "views/client/client_edit.php";
+	break;
 
 	case "edit":$client->edit($cnx);
+	//include "views/client/client_liste.php";
+	break;
 	
+	case "suppSociete":$client->supp($cnx);
+	break;
+
+	case "suppPhysique":$client->supp($cnx);
 	break;
 	
 	case "supp":$client->supp($cnx);

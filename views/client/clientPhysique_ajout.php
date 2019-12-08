@@ -3,13 +3,13 @@
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
 			<ol class="breadcrumb">
-				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+				<li><a href="index.php"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
 				<li class="active">Home</li>
 			</ol>
 		</div><!--/.row-->
 		
 		
-
+		<!-- action="index.controller.php?action=afficheForm&controller=client" -->
         
 <div class="row">
 			<div class="col-lg-12">
@@ -17,7 +17,7 @@
 				<div class="panel-heading">Ajout d'une personne</div>
 					<div class="panel-body">
 						<div class="col-md-6">
-							<form role="form"  method="post" action="index.controller.php?action=afficheForm&controller=client" controller="client" enctype="multipart/form-data" >
+							<form role="form"  method="post"  controller="client" enctype="multipart/form-data" >
 							
 								<div class="form-group">
 									<label>Nom :</label>
@@ -48,13 +48,13 @@
 								<button  type="reset" class="btn btn-default">Reset Button</button>		
 
                                 <div class="form-group" style=" visibility:hidden">
-									<label>Nom Société:</label>
-									<input class="form-control" name="nom_societe" placeholder="Placeholder">
+									<label>type_id:</label>
+									<input class="form-control" name="type_id" value= "0" >
 								</div>
 																
 								<div class="form-group" style=" visibility:hidden">
 									<label>Matricule fiscale:</label>
-									<input class="form-control" name="mat_fiscale"  name="date_commande" placeholder="Placeholder">
+									<input class="form-control" name="mat_fiscale"   placeholder="Placeholder">
 								</div>																						
 								
 							</div>
