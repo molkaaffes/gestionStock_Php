@@ -4,13 +4,14 @@
 
 $controller='article'; 
 $action='add';
-//var_dump($_REQUEST['controller']);
+var_dump($_REQUEST['controller']);
+var_dump($_REQUEST['action']);
 //Recupération 
 
 if(isset($_REQUEST['controller'])) 
 {
     $controller =$_REQUEST['controller']; 
-    echo("test:".$controller);
+    //echo("test:".$controller);
 }
 if(isset($_REQUEST['action']))  
     $action =$_REQUEST['action'];

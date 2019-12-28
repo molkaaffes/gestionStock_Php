@@ -18,22 +18,22 @@
 							
 								<div class="form-group">
 									<label>Nom Société:</label>
-									<input class="form-control" name="nom_client" placeholder="Placeholder">
+									<input class="form-control" name="nom_client" placeholder="Placeholder" required>
 								</div>
 																
 								<div class="form-group">
 									<label>Matricule fiscale:</label>
-									<input class="form-control" name="mat_fiscale"  placeholder="Placeholder">
+									<input class="form-control" name="mat_fiscale"  placeholder="Placeholder" required>
 								</div>
 								
 								<div class="form-group">
 									<label>Numero de téléphone:</label>
-									<input class="form-control" name="num_tel"   placeholder="Placeholder">
+									<input class="form-control" name="num_tel"   placeholder="Placeholder" required>
 								</div>
 								
 								<div class="form-group">
 									<label>Adresse:</label>
-									<input class="form-control" name="adr_client" placeholder="Placeholder">
+									<input class="form-control" name="adr_client" placeholder="Placeholder" required>
 								</div>
 
 
@@ -43,17 +43,17 @@
 								
 								 <div class="form-group" style=" visibility:hidden"  >
 									<label>type :</label>
-									<input class="form-control" name="type_id" value= "1" >
+									<input class="form-control" name="type_id" value= "1" required>
 								</div>
 
 								<div class="form-group"  style=" visibility:hidden">
 									<label>Prénom :</label>
-									<input class="form-control" name="prenom_client" placeholder="Placeholder">
+									<input class="form-control" name="prenom_client" placeholder="Placeholder" required>
 								</div>			
 																
 								<div class="form-group"  style=" visibility:hidden">
 									<label>Matricule :</label>
-									<input class="form-control"  name="mat_client" placeholder="Placeholder">
+									<input class="form-control"  name="mat_client" placeholder="Placeholder" required>
 								</div>
 
                               																						

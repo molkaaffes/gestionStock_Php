@@ -21,27 +21,27 @@
 							
 								<div class="form-group">
 									<label>Nom :</label>
-									<input class="form-control" name="nom_client" placeholder="Placeholder">
+									<input class="form-control" name="nom_client" placeholder="Placeholder" required>
 								</div>
 
 								<div class="form-group">
 									<label>Prénom :</label>
-									<input class="form-control" name="prenom_client" placeholder="Placeholder">
+									<input class="form-control" name="prenom_client" placeholder="Placeholder" required>
 								</div>			
 																
 								<div class="form-group">
 									<label>Matricule :</label>
-									<input class="form-control"  name="mat_client" placeholder="Placeholder">
+									<input class="form-control"  name="mat_client" placeholder="Placeholder"required>
 								</div>
 								
 								<div class="form-group">
 									<label>Numero de téléphone : </label>
-									<input class="form-control" name="num_tel"  placeholder="Placeholder">
+									<input class="form-control" name="num_tel"  placeholder="Placeholder" required>
 								</div>
 								
 								<div class="form-group">
 									<label>Adresse :</label>
-									<input class="form-control" name="adr_client" placeholder="Placeholder">
+									<input class="form-control" name="adr_client" placeholder="Placeholder" required>
 								</div>
 
                                 <button  type="submit" class="btn btn-primary" value="Submit Button">Submit Button</button>

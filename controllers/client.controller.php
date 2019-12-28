@@ -70,11 +70,11 @@ switch($action){
 	break;
 	
 	case "ajoutPhysique":$client->addPersonne($cnx);
-	include "Views/client/clientPhysique_ajout.php";
+//	include "Views/client/clientPhysique_ajout.php";
 	break;
 
 	case "ajoutSociete":$client->addSociete($cnx);
-	include "Views/client/clientSociete_ajout.php";
+//	include "Views/client/clientSociete_ajout.php";
 	break;
 
 	case "showEdit":$res=$client->findOne($cnx);
