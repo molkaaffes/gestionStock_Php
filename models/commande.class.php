@@ -41,7 +41,7 @@ public function __construct($id_commande,$date_commande,$adresse_livraison,$id_c
 	}
 	 public function liste($cnx)
 	{
-		$query = 'SELECT *,cl.nom,cl.num,a.num,a.lib_article,dt.qt_commande
+		$query = 'SELECT cl.nom,cl.num,a.num,a.lib_article,dt.qt_commande
 		 FROM commande c ,client cl , article a , details_commande dt
 	 	 where  ';
 	 	$tab=$cnx->query($query)->fetchAll(PDO::FETCH_OBJ);
