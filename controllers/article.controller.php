@@ -15,7 +15,7 @@ $fn=new fonction();
 	 $qte_article="";
 	 $photo_article="";
 	 $description_article="";
-	 $num_artcile="";
+	 $num_article="";
 
 	// $action="add1";
 
@@ -47,8 +47,8 @@ $photo_article=$_REQUEST['photo_old'];
 if(isset($_REQUEST['description_article']))
 $description_article=$_REQUEST['description_article'];
 
-if(isset($_REQUEST['num_artcile']))
-$num_artcile=$_REQUEST['num_artcile'];
+if(isset($_REQUEST['num_article']))
+$num_article=$_REQUEST['num_article'];
 
 //image
 if(isset($_FILES['photo_article']))
@@ -76,7 +76,7 @@ if(isset($_FILES['photo_article']))
 
 
 //creation de l'objet
-$article=new article($id_article,$lib_article,$prix_HT,$TVA,$qte_article,$photo_article,$description_article,$num_artcile);
+$article=new article($id_article,$lib_article,$prix_HT,$TVA,$qte_article,$photo_article,$description_article,$num_article);
 
 switch($action){
 	case "liste":$res=$article->liste($cnx);
@@ -97,7 +97,7 @@ switch($action){
 	case "edit":$article->edit($cnx);
 	break;
 	
-	case "supp":$article->supp($cnx);
+	case "supp":$article->supp($id,$cnx);
 	break;
 	
 }

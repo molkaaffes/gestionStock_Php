@@ -4,7 +4,7 @@
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
 			<ol class="breadcrumb">
-				<li><a href="#"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
+				<li><a href="index.php"><svg class="glyph stroked home"><use xlink:href="#stroked-home"></use></svg></a></li>
 				<li class="active">Icons</li>
 			</ol>
 		</div><!--/.row-->
@@ -29,8 +29,8 @@
 								<th data-field="TVA"  data-sortable="true">TVA</th>
 								<th data-field="tRemise" data-sortable="true">Taux de remise</th>
 						        <th data-field="qte" data-sortable="true">Quantité</th>
-								<th data-field="categ" data-sortable="true">Catégorie</th>
-								<th data-field="categ" data-sortable="true">Action</th>
+								<th data-field="description" data-sortable="true">description</th>
+								<th data-field="action" data-sortable="true">Action</th>
 						    </tr>							
 							</thead>
 	
@@ -39,16 +39,16 @@
 							foreach($res as $article){
 							?>		
 							<tr>
-							<td><?php echo $article->num_artcile; ?></td>
+							<td><?php echo $article->num_article; ?></td>
 							<td> <?php echo $article->lib_article; ?></td>
 							<td><?php echo $article->prix_HT; ?></td>
 							<td><?php echo $article->TVA; ?></td>
 							<td><?php echo "2%"; ?></td>
 							<td><?php echo $article->qte_article; ?></td>
-							<td><?php echo "Santé"; ?></td>
+							<td><?php echo $article->description_article; ?></td>
 							<td>
-							<a href="index.controller.php?controller=article&action=showEdit&id=<?php echo $article->id; ?>">Edit</a>
-							<a href="index.controller.php?controller=article&action=delete&id=<?php echo $article->id; ?>">delte</a>
+							<a href="index.controller.php?controller=article&action=showEdit&id=<?php echo $article->id; ?>">Modifier</a>
+							<a href="index.controller.php?controller=article&action=supp&id=<?php echo $article->id; ?>">Supprimer</a>
 							</td>
 							</tr>
 							<?php } ?>

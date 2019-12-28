@@ -23,7 +23,7 @@
 <form role="form" action="index.controller.php?action=add&controller=article" method="post"  controller="article" enctype="multipart/form-data">
 								<div class="form-group">
 									<label>Numéro Article:</label>
-									<input value=<?php echo $res->num_artcile;?> name="num_artcile" class="form-control" placeholder="Placeholder">
+									<input value=<?php echo $res->num_article;?> name="num_article" class="form-control" placeholder="Placeholder">
 								</div>
 																
 								<div class="form-group">
