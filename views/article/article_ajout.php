@@ -19,11 +19,11 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<div class="col-md-6">
-							<?php// echo Sessions::get('msg') ;?>
+							<?php // echo Sessions::get('msg') ;?>
 <form role="form" action="index.controller.php?action=add&controller=article" method="post"  controller="article" enctype="multipart/form-data">
 								<div class="form-group">
 									<label>Numéro Article:</label>
-									<input name="num_artcile" class="form-control" placeholder="Placeholder">
+									<input name="num_article" class="form-control" placeholder="Placeholder">
 								</div>
 																
 								<div class="form-group">

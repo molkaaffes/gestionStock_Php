@@ -36,7 +36,7 @@ CREATE TABLE `article` (
   `qte_article` int(11) NOT NULL,
   `photo_article` varchar(50) NOT NULL,
   `description_article` varchar(300) NOT NULL,
-  `num_artcile` varchar(10) NOT NULL,
+  `num_article` varchar(10) NOT NULL,
   `id_remise` int(10) NOT NULL,
   `id_cat` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -45,7 +45,7 @@ CREATE TABLE `article` (
 -- Déchargement des données de la table `article`
 --
 
-INSERT INTO `article` (`id`, `lib_article`, `prix_HT`, `TVA`, `qte_article`, `photo_article`, `description_article`, `num_artcile`, `id_remise`, `id_cat`) VALUES
+INSERT INTO `article` (`id`, `lib_article`, `prix_HT`, `TVA`, `qte_article`, `photo_article`, `description_article`, `num_article`, `id_remise`, `id_cat`) VALUES
 (129, 'article algesic', 9, 2, 10, 'pY0h3Bc5.png', 'medicament', 'A001', 0, 0),
 (130, 'AZERTYU', 0, 0, 0, '', '', '', 0, 0),
 (131, 'AZERTYU', 0, 0, 0, '', '', '', 0, 0),
