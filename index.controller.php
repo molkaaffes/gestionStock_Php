@@ -4,8 +4,10 @@
 
 $controller='article'; 
 $action='add';
-var_dump($_REQUEST['controller']);
-var_dump($_REQUEST['action']);
+
+// var_dump($_REQUEST['controller']);
+// var_dump($_REQUEST['action']);
+
 //Recupération 
 
 if(isset($_REQUEST['controller'])) 

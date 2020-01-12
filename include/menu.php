@@ -80,7 +80,7 @@
 				</ul>
 			</li>
 			<li role="presentation" class="divider"></li>
-			<li><a href="login.html"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Login Page</a></li>
+			<li><a href="index.controller.php?action=login1&controller=admin"><svg class="glyph stroked male-user"></svg> Login Page</a></li>
 		</ul>
 
 	</div><!--/.sidebar-->

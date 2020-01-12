@@ -1,0 +1,13 @@
+****Article******
+Image dans modifier article
+Controle des champs dans l'ajout (required)
+redirection apres ajout
+
+****Commande*****
+Ajout Commande et autre view pour ajout details commande
+
+
+****Client*****
+Ajout d'une ligne vide
+
+****Réglement et facture****

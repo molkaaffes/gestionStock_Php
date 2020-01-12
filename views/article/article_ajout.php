@@ -20,7 +20,7 @@
 					<div class="panel-body">
 						<div class="col-md-6">
 							<?php // echo Sessions::get('msg') ;?>
-<form role="form" action="index.controller.php?action=add&controller=article" method="post"  controller="article" enctype="multipart/form-data">
+							<form role="form" action="index.controller.php?action=add&controller=article" method="post"  controller="article" enctype="multipart/form-data">
 								<div class="form-group">
 									<label>Numéro Article:</label>
 									<input name="num_article" class="form-control" placeholder="Placeholder">
@@ -46,17 +46,6 @@
 									<input  name="TVA" class="form-control"  type="number"placeholder="Placeholder">
 								</div>
 	
-								<!--<label>Validation</label>
-								<div class="form-group has-success">
-									<input class="form-control" placeholder="Success">
-								</div>
-								<div class="form-group has-warning">
-									<input class="form-control" placeholder="Warning">
-								</div>
-								<div class="form-group has-error">
-									<input class="form-control" placeholder="Error">
-								</div>-->
-
 							</div>
 							<div class="col-md-6">
 							
