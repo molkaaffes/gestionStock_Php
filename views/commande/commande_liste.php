@@ -1,9 +1,9 @@
 <?php include('include/header.php') ?>
 <?php
-		if($_SESSION['date_commande']=="")
+	/*	if($_SESSION['date_commande']=="")
 		{	echo '<script language="javascript">';
 			echo 'alert("first of all add commande")';
-			echo '</script>';}
+			echo '</script>';}*/
 		?>
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
@@ -35,11 +35,11 @@
 								<th data-field="adresse_livraison" data-sortable="true">Action</th>
 						    </tr>							
 							</thead>
-						
+							<?php foreach ( $_SESSION['commande']  as $cmd ){ ?>
 							<tr>
-								<td><?php print_r($_SESSION['num_cmd']) ; ?></td>
-								<td><?php print_r($_SESSION['date_commande']) ; ?></td>
-								<td><?php print_r($_SESSION['id_client']) ; ?></td>
+								<td><?php  echo $cmd['num_cmdd']; ?></td>
+								<td><?php print_r($cmd['date_commande']) ; ?></td>
+								<td><?php print_r($cmd['id_client']) ; ?></td>
 								<td><?php print_r("'cc'") ; ?></td>
 								<td><?php print_r($_SESSION['adresse_livraison']) ; ?></td>								
 								<td>
@@ -47,7 +47,7 @@
 								<a href="index.controller.php?controller=commande&action=supp">Delte</a>
 								</td>
 							</tr>
-							
+							<?php }; ?>
 						 
 						</table>
 					</div>

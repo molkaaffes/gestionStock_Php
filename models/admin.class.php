@@ -26,6 +26,7 @@ public function __construct($login,$pass)
 				$_SESSION['login']=$this->login;
 				$_SESSION['pass']=$this->pass;
 				$_SESSION['auth']=true;
+				$_SESSION['commande']=array();
 				header("location:index.controller.php?controller=admin&action=connect");
 				}
 	   else

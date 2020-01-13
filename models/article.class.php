@@ -7,6 +7,7 @@ class Article
 	private $prix_HT;
 	private $TVA;
 	private $qte_article;
+	private $id_remise;
 	private $photo_article;
 	private $description_article;
 	private $num_article;

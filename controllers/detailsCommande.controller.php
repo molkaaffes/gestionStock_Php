@@ -31,11 +31,14 @@ $taux_remise_accorde=$_POST['taux_remise_accorde'];
 if(isset($_POST['TVA']))
 $TVA=$_POST['TVA'];
 
+if(isset($_POST['article_id']))
+$TVA=$_POST['article_id'];
+
 //creation de l'objet
-$details_Commande=new detailsCommande($id_detailsCommande,$qte_commande,$prix_unitaire,$taux_remise_accorde,$TVA);
+$details_Commande=new detailsCommande($id_detailsCommande,$article_id,$qte_commande,$prix_unitaire,$taux_remise_accorde,$TVA);
 
 switch($action){
-	case "liste":$res=$details_Commande->getAll($cnx);
+	case "liste"://$res=$details_Commande->getAll($cnx);
 	include "Views/details_Commande/details_Commande_liste.php";
 	break;
 	

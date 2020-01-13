@@ -1,28 +1,43 @@
 <?php
-class DetailsCommande
+class detailsCommande
 {
 	private $id_detailsCommande;
 	private $qte_commande;
 	private $prix_unitaire;
 	private $taux_remise_accorde;
 	private $TVA;
+	private $id_article;
 	
 
 
 
-public function __construct($id_detailsCommande,$qte_commande,$prix_unitaire,$taux_remise_accorde,$TVA)
+public function __construct($id_detailsCommande,$id_article,$qte_commande,$prix_unitaire,$taux_remise_accorde,$TVA)
 	{
 		$this->id_detailsCommande=$id_detailsCommande;
 		$this->qte_commande=$qte_commande; 
 		$this->prix_unitaire=$prix_unitaire;
 		$this->taux_remise_accorde=$taux_remise_accorde;
 		$this->TVA=$TVA;
+		$this->id_article=$id_article;
 		
 	}
 	
 	public function add($cnx)
 	{
-		$cnx -> exec("insert into details_commande (qte_commande,prix_unitaire, taux_remise_accorde,TVA,nom_details_commande,date_echenace ) values('".$this->qte_commande."','".$this->prix_unitaire."','".$this->taux_remise_accorde."','".$this->TVA."')");	
+		$query = 'SELECT * FROM article where id='.$this->id_article ;
+		$article=$cnx->query($query)->fetch(PDO::FETCH_OBJ);
+
+		$query = 'SELECT * FROM remise where id='.$article->id_remise ;
+		$remise=$cnx->query($query)->fetch(PDO::FETCH_OBJ);
+		var_dump($_SESSION['commande']);
+
+		$cnx -> exec("insert into commande 
+		 values('".$_SESSION['commande'][0]['date_commande']."','".$_SESSION['commande']['adresse_livraison']."',
+		 '".$_SESSION['commande']['id_client']."','".$_SESSION['commande']['num_cmd']."')");	
+
+		 $cnx -> exec("insert into details_commande 
+		 values('".$this->qte_commande."','".$article->prix_HT."','".$_SESSION['commande']['taux_remise_accorde']."','20%',
+		 '".$_SESSION['commande']['num_cmd']."','".$this->id_article."')");	
 		
 		//header("location:controller.php?action=liste");
 		

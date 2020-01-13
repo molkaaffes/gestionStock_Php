@@ -7,26 +7,22 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<div class="col-md-6">
-							<form role="form" method="post"  controller="detailsCommande" enctype="multipart/form-data">
+							<form role="form" method="post"  action="index.controller.php?controller=commande&action=ValideDetailsCmd" controller="commande" enctype="multipart/form-data">
 							
 								<div class="form-group">
                                     <label>Article:</label>
                                     <select name='article' class='form-control select2-single'>
                                         <?php foreach ($articles as $article){ ?>
                                     <option value='<?php echo $article->id;?>'> <?php echo $article->lib_article ; ?> </option>
-                                    <?php ?>
-                                    <option></option>
                                         <?php } ;?>
                                     </select>
-
 								</div>	
 										
 							<button style="float:left;margin-top:2vw" type="reset" class="btn btn-default">Réinitialiser</button>
 								<!--	<a class="btn btn-success" href="index.controller.php?controller=commande&action=verif" style="margin-top:2vw;" role="button">Vérifier</a>-->
-								<button style="float:right;margin-top:2vw" type="submit" class="btn btn-primary" value="Submit Button">Valider</button>							
+								<input  type="submit" class="btn btn-primary" value="Submit Button"/>
 							</div>
 							<div class="col-md-6">
-							
 															
                             <div class="form-group">
 									<label>quantité commander:</label>

@@ -17,11 +17,11 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<div class="col-md-6">
-							<form role="form" method="post"  controller="commande" enctype="multipart/form-data">
+							<form role="form"  action="index.controller.php?controller=commande&action=add" controller="commande" enctype="multipart/form-data" method="post">
 							
 								<div class="form-group">
 									<label>Numéro  commande:</label>
-									<input class="form-control" name="id_commande" placeholder="Placeholder" required>
+									<input class="form-control" name="id_commande" id="id_commande" placeholder="Placeholder" required>
 								</div>	
 																								
 								<div class="form-group">
@@ -36,7 +36,7 @@
 																
 							<button style="float:left;margin-top:2vw" type="reset" class="btn btn-default">Réinitialiser</button>
 								<!--	<a class="btn btn-success" href="index.controller.php?controller=commande&action=verif" style="margin-top:2vw;" role="button">Vérifier</a>-->
-								<button style="float:right;margin-top:2vw" type="submit" class="btn btn-primary" value="Submit Button">Valider</button>							
+								<input  type="submit" class="btn btn-primary" value="Submit Button"/>
 							</div>
 							<div class="col-md-6">
 							

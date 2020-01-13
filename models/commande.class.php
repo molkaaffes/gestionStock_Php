@@ -1,5 +1,5 @@
 <?php
-class Commande
+class commande
 {
 	private $id_commande;
 	private $date_commande;
@@ -27,13 +27,18 @@ public function __construct($id_commande,$date_commande,$adresse_livraison,$id_c
 	
 	public function add($cnx)
 	{
-		$_SESSION['date_commande']=$this->date_commande;
-		$_SESSION['adresse_livraison']=$this->adresse_livraison;
-		$_SESSION['id_client']=$this->id_client;
-		$_SESSION['taux_remise_accorde']=$this->taux_remise_accorde;
-		$_SESSION['num_cmd']=$this->num_cmd;
-		//include "Views/commande/details_cmd_add.php";
-	//	header("location:commande.controller.php?action=addDetails");
+		//$_SESSION['commande']=array();
+		$commande['date_commande']=$this->date_commande;
+		$commande['adresse_livraison']=$this->adresse_livraison;
+		$commande['id_client']=$this->id_client;
+		$commande['taux_remise_accorde']=$this->taux_remise_accorde;
+		$commande['num_cmd']=$this->num_cmd;
+		array_push($_SESSION['commande'],$commande);
+	//	print_r($_SESSION['commande']);
+	//	print_r($commande);
+	//	print_r($this);
+		
+		header("location:index.controller.php?controller=commande&action=addDetails");
 	}
 	public function supp($cnx)
 	{
