@@ -1,5 +1,5 @@
 <?php include('include/header.php') ?>
-		
+	
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
 			<ol class="breadcrumb">
@@ -7,14 +7,11 @@
 				<li class="active">Home</li>
 			</ol>
 		</div><!--/.row-->
-		
 		<div class="row">
 			<div class="col-lg-12">
 				<h1 class="page-header">Ajout d'une Commande</h1>
 			</div>
 		</div><!--/.row-->
-				
-		
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="panel panel-default">
@@ -24,27 +21,17 @@
 							
 								<div class="form-group">
 									<label>Numéro  commande:</label>
-									<input class="form-control" name="id_commande" placeholder="Placeholder">
+									<input class="form-control" name="id_commande" placeholder="Placeholder" required>
 								</div>	
-
-								<div class="form-group">
-									<label>Numéro  d'article:</label>
-									<input class="form-control" name="id_article" placeholder="Placeholder">
-								</div>	
-								
-								<div class="form-group">
-									<label>Prix unitaire:</label>
-									<input class="form-control" name="prix_unitaire" type="number" placeholder="Placeholder">
-								</div>
 																								
 								<div class="form-group">
 									<label>Numero du client:</label>
-									<input class="form-control" name="id_client"  placeholder="Placeholder">
+									<input class="form-control" name="id_client"  placeholder="Placeholder" required>
 								</div>
 																
 								<div class="form-group">
 									<label>Adresse livraison:</label>
-									<input class="form-control" name="adresse_livraison" placeholder="Placeholder">
+									<input class="form-control" name="adresse_livraison" placeholder="Placeholder" required>
 								</div>
 																
 							<button style="float:left;margin-top:2vw" type="reset" class="btn btn-default">Réinitialiser</button>
@@ -54,27 +41,14 @@
 							<div class="col-md-6">
 							
 								<div class="form-group">
-									<label>Quantité commandée:</label>
-									<input class="form-control"  name="qte_commande" placeholder="Placeholder">
-								</div>
-								
-								<div class="form-group">
 									<label>Taux de remises accordé:</label>
-									<input class="form-control" name="taux_remise_accorde"   placeholder="Placeholder">
+									<input class="form-control" name="taux_remise_accorde"  required placeholder="Placeholder">
 								</div>
-
-								<div class="form-group">
-									<label>TVA:</label>
-									<input class="form-control" name="TVA"   placeholder="Placeholder">
-								</div>
-							
 
 								<div class="form-group">
 									<label>Date de Commande:</label>
-									<input class="form-control" type="date" name="date_commande" placeholder="Placeholder">
+									<input class="form-control" type="date" name="date_commande" required placeholder="Placeholder">
 								</div>
-								
-							
 								
 							</div>
 						</form>

@@ -1,5 +1,10 @@
 <?php include('include/header.php') ?>
-		
+<?php
+		if($_SESSION['date_commande']=="")
+		{	echo '<script language="javascript">';
+			echo 'alert("first of all add commande")';
+			echo '</script>';}
+		?>
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
 			<ol class="breadcrumb">
@@ -27,27 +32,22 @@
 						        <th data-field="numClient"  data-sortable="true">Numéro Client</th>
 								<th data-field="nomClient"  data-sortable="true">Nom Client</th>
 								<th data-field="adresse_livraison" data-sortable="true">adresse de livraison</th>
-								<th data-field="numArticle" data-sortable="true">Numéro article</th>
-						        <th data-field="qte" data-sortable="true">Quantité commandé</th>
+								<th data-field="adresse_livraison" data-sortable="true">Action</th>
 						    </tr>							
 							</thead>
-							<?php foreach ($res as $commande) { ?>
+						
 							<tr>
-							<td><?php echo $commande->id; ?></td>
-							<td><?php echo $commande->date_commande; ?></td>
-							<td>Cli002</td>
-							<td>Jamil</td>
-							<td><?php echo $commande->adresse_livraison; ?></td>
-							<td>Art001</td>
-							<td>6</td>
-
-
-							<td>
-							<a href="index.controller.php?controller=article&action=showEdit&id=<?php echo $commande->id; ?>">Edit</a>
-							<a href="index.controller.php?controller=article&action=delete&id=<?php echo $commande->id; ?>">delte</a>
-							</td>
+								<td><?php print_r($_SESSION['num_cmd']) ; ?></td>
+								<td><?php print_r($_SESSION['date_commande']) ; ?></td>
+								<td><?php print_r($_SESSION['id_client']) ; ?></td>
+								<td><?php print_r("'cc'") ; ?></td>
+								<td><?php print_r($_SESSION['adresse_livraison']) ; ?></td>								
+								<td>
+								<a href="index.controller.php?controller=commande&action=addDetails">Ajout Article</a>
+								<a href="index.controller.php?controller=commande&action=supp">Delte</a>
+								</td>
 							</tr>
-								<?php }?>
+							
 						 
 						</table>
 					</div>

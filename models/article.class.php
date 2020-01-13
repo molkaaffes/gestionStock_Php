@@ -1,5 +1,5 @@
 <?php
- session_start();
+ @session_start();
 class Article  
 {
 	private $id_artcile;
@@ -10,8 +10,6 @@ class Article
 	private $photo_article;
 	private $description_article;
 	private $num_article;
-	
-
 
 public function __construct($id_article,$lib_article,$prix_HT,$TVA,$qte_article,$photo_article,$description_article,$num_article)
 	{
@@ -22,8 +20,7 @@ public function __construct($id_article,$lib_article,$prix_HT,$TVA,$qte_article,
 		$this->qte_article=$qte_article;
 		$this->photo_article=$photo_article; 
 		$this->description_article=$description_article;
-		$this->num_article=$num_article;
-		
+		$this->num_article=$num_article;		
 	}
 	
 	public function add($cnx)

@@ -9,35 +9,41 @@ class Commande
 	private $prix_unitaire;
 	private $taux_remise_accorde;
 	private $TVA;
+	private $num_cmd;
 	
 
 
-public function __construct($id_commande,$date_commande,$adresse_livraison,$id_client,$qte_commande,$prix_unitaire,$taux_remise_accorde,$TVA)
+public function __construct($id_commande,$date_commande,$adresse_livraison,$id_client,$num_cmd,$prix_unitaire,$taux_remise_accorde,$TVA)
 	{
 		$this->id_commande=$id_commande;
 		$this->date_commande=$date_commande; 
 		$this->adresse_livraison=$adresse_livraison; 
 		$this->id_client=$id_client; 
-		$this->qte_commande=$qte_commande;
+		$this->num_cmd=$num_cmd;
 		$this->prix_unitaire=$prix_unitaire; 
 		$this->taux_remise_accorde=$taux_remise_accorde; 
-		$this->TVA=$TVA; 
-
-		
+		$this->TVA=$TVA; 	
 	}
 	
 	public function add($cnx)
 	{
-	$cnx -> exec("insert into commande  (date_commande,adresse_livraison,id_client) values('".$this->date_commande."','".$this->adresse_livraison."','".$this->id_client."')");	
-		$cnx-> exec("insert into details_commande  (qte_commande,prix_unitaire,taux_remise_accorde,TVA,id_commande) values('".$this->qte_commande."','".$this->prix_unitaire."','".$this->taux_remise_accorde."','".$this->TVA."','".$this->id_commande."')" );
+		$_SESSION['date_commande']=$this->date_commande;
+		$_SESSION['adresse_livraison']=$this->adresse_livraison;
+		$_SESSION['id_client']=$this->id_client;
+		$_SESSION['taux_remise_accorde']=$this->taux_remise_accorde;
+		$_SESSION['num_cmd']=$this->num_cmd;
+		//include "Views/commande/details_cmd_add.php";
+	//	header("location:commande.controller.php?action=addDetails");
 	}
 	public function supp($cnx)
 	{
-		/*
-		$sql = "DELETE FROM commande WHERE email= 'dodo@gmail.com'";
-		$nb = $cnx->exec($sql);
-		echo $nb.' membres ont été supprimés.';	
-		header("location:controller.php?action=liste");*/
+		$_SESSION['date_commande']="";
+		$_SESSION['adresse_livraison']="";
+		$_SESSION['id_client']="";
+		$_SESSION['taux_remise_accorde']="";
+		$_SESSION['num_cmd']="";
+		header("location:commande.controller.php?action=liste");
+//	include "views/commande/commande_liste.php";
 	}
 	 public function liste($cnx)
 	{

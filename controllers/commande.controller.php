@@ -2,17 +2,26 @@
  //session_start();
 include "include/connexion.php";
 include "models/commande.class.php";
+include "models/article.class.php";
 
 //initialisation des parametres
  	 $id_commande="";
 	 $date_commande="";
 	 $adresse_livraison="";
 	 $id_client="";
-	 $qte_commande="";
+	 $num_cmd="";
 	 $prix_unitaire="";
 	 $taux_remise_accorde="";
 	 $TVA="";
-
+//
+$id_article ="";
+$lib_article="";
+$prix_HT="";
+$TVA="";
+$qte_article="";
+$photo_article="";
+$description_article="";
+$num_article="";
  //$action="add1";
 
 //recupétation des variables externes
@@ -31,8 +40,8 @@ $adresse_livraison=$_POST['adresse_livraison'];
 if(isset($_POST['id_client']))
 $id_client=$_POST['id_client'];
 
-if(isset($_POST['qte_commande']))
-$qte_commande=$_POST['qte_commande'];
+if(isset($_POST['id_commande']))
+$num_cmd=$_POST['id_commande'];
 
 if(isset($_POST['date_commande']))
 $date_commande=$_POST['date_commande'];
@@ -47,17 +56,22 @@ if(isset($_POST['TVA']))
 $TVA=$_POST['TVA'];
 
 //creation de l'objet
-$commande=new commande($id_commande,$date_commande,$adresse_livraison,$id_client,$qte_commande,$prix_unitaire,$taux_remise_accorde,$TVA);
-
+$commande=new commande($id_commande,$date_commande,$adresse_livraison,$id_client,$num_cmd,$prix_unitaire,$taux_remise_accorde,$TVA);
+$article=new article($id_article,$lib_article,$prix_HT,$TVA,$qte_article,$photo_article,$description_article,$num_article);
 switch($action){
-	case "liste":$res=$commande->liste($cnx);
-	include "views/commande/commande_liste.php";
+	case "liste"://$res=$commande->liste($cnx);
+		include "views/commande/commande_liste.php";
 	break;
 	
 	case "add":$commande->add($cnx);
 	break;
 
-	case "afficheForm":$commande->add($cnx);
+	case "addDetails":
+			$articles=$article->liste($cnx);
+	include "Views/commande/details_cmd_add.php";
+	break;
+
+	case "afficheForm":
 	include "views/commande/commande_ajout.php";
 	break;
 

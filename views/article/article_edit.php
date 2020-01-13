@@ -19,7 +19,7 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<div class="col-md-6">
-							<?php var_dump($res) ;?>
+							<?php //var_dump($res) ;?>
 <form role="form" action="index.controller.php?action=add&controller=article" method="post"  controller="article" enctype="multipart/form-data">
 								<div class="form-group">
 									<label>Numéro Article:</label>
