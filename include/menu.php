@@ -6,7 +6,7 @@
 		</form>
 		<ul class="nav menu">
 
-			<li class="active"><a href="../index.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
+			<li class="active"><a href="index.controller.php?action=dashboard&controller=admin"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
 			<li><a href="index.controller.php?action=liste&controller=article"><img src="photos/listeArticle.png" width="15vw" height="15vh"></img> Liste Article</a></li>
 
 			<li><a href="index.controller.php?action=afficheForm&controller=article"><img src="photos/ajoutArticle.png" width="15vw" height="15vh"></img> Ajout Artcile</a></li>
@@ -68,7 +68,7 @@
 						</a>
 					</li>
 					<li>
-						<a class="" href="#">
+						<a class="" href="index.controller.php?action=listeCheque&controller=reglement">
 							<img src="photos/cheque.png" width="15vw" height="15vh"></img> Réglement par chéque
 						</a>
 					</li>

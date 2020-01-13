@@ -31,7 +31,16 @@ break;
 case "logout": $inst->logout();
 break;
 
+case "profil":include "views/admin/profile.php";
+break;
+
+case "setting":include "views/admin/setting.php";
+break;
+
 case"erreur": include "views/login.php";
+break;
+
+case"dashboard": include "views/dashboard/dashboard.php";
 break;
 
 }
