@@ -94,7 +94,7 @@ switch($action){
 	include "views/article/article_edit.php";
 	break;
 
-	case "edit":$article->edit($cnx);
+	case "edit":$article->edit($cnx,$id);
 	break;
 	
 	case "supp":$article->supp($id,$cnx);

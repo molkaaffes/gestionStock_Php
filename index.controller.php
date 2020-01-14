@@ -1,12 +1,16 @@
 <?php include_once 'include/connexion.php'; 
 //include_once "models/fonctions.class.php";
 //initialisation des variables $controleur et $action 
-if (!isset($_SESSION['commande']))
-   { session_start();
+
+if (isset($_SESSION))
+   { 
+    // Unset all of the session variables.
     $_SESSION['commande']=array();
-    $_SESSION['auth']==true ;
-    echo'cc';
-    var_dump('des sess');}
+   }
+   session_start();
+
+//print_r ($_SESSION);
+
 $controller='article'; 
 $action='add';
 //$_SESSION

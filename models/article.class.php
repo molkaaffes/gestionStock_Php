@@ -32,7 +32,7 @@ public function __construct($id_article,$lib_article,$prix_HT,$TVA,$qte_article,
 		include "Views/article/article_liste.php";
 		//return View("views/article_liste.php", tab);
 		//return RedirectToAction("liste");
-		//header("location:index.controller.php?action=afficheForm&controller=article");
+		header("location:index.controller.php?action=afficheForm&controller=article");
 	//	return Redirect::back()->with('msg', 'succs');
 		
 	}
@@ -58,9 +58,9 @@ public function __construct($id_article,$lib_article,$prix_HT,$TVA,$qte_article,
 		return $tab;
 		
 	}
-	public function edit($cnx)
+	public function edit($cnx,$id)
 	{
-			$req="update  article set `lib_article` = '".$this->lib_article."' , `prix_HT` = '".$this->prix_HT."' , `TVA` = '".$this->TVA."' , `qte_article` = '".$this->qte_article."' , `photo_article` = '".$this->photo_article."' , `description_article` = '".$this->description_article."' , `num_article` = '".$this->num_article."' where id = ".$this->id;
+			$req="update  article set `lib_article` = '".$this->lib_article."' , `prix_HT` = '".$this->prix_HT."' , `TVA` = '".$this->TVA."' , `qte_article` = '".$this->qte_article."' , `photo_article` = '".$this->photo_article."' , `description_article` = '".$this->description_article."'  where id = ".$id;
  
 		 $cnx->exec($req) ;
 		 header("location:index.controller.php?controller=article&action=liste");

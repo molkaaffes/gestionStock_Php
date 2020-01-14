@@ -29,15 +29,15 @@ public function __construct($id_detailsCommande,$id_article,$qte_commande,$prix_
 
 		$query = 'SELECT * FROM remise where id='.$article->id_remise ;
 		$remise=$cnx->query($query)->fetch(PDO::FETCH_OBJ);
-		var_dump($_SESSION['commande']);
+		// var_dump($_SESSION['commande']);
 
 		$cnx -> exec("insert into commande 
-		 values('".$_SESSION['commande'][0]['date_commande']."','".$_SESSION['commande']['adresse_livraison']."',
-		 '".$_SESSION['commande']['id_client']."','".$_SESSION['commande']['num_cmd']."')");	
+		 values('','".$_SESSION['commande'][0]['date_commande']."','".$_SESSION['commande'][0]['adresse_livraison']."',
+		 '".$_SESSION['commande'][0]['id_client']."','".$_SESSION['commande'][0]['num_cmd']."')");	
 
 		 $cnx -> exec("insert into details_commande 
-		 values('".$this->qte_commande."','".$article->prix_HT."','".$_SESSION['commande']['taux_remise_accorde']."','20%',
-		 '".$_SESSION['commande']['num_cmd']."','".$this->id_article."')");	
+		 values('','".$this->qte_commande."','".$article->prix_HT."','".$_SESSION['commande'][0]['taux_remise_accorde']."','20%',
+		 '".$_SESSION['commande'][0]['num_cmd']."','".$this->id_article."')");	
 		
 		//header("location:controller.php?action=liste");
 		

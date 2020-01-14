@@ -20,11 +20,7 @@
 					<div class="panel-body">
 						<div class="col-md-6">
 						
-<form role="form" action="index.controller.php?action=add&controller=article" method="post"  controller="article" enctype="multipart/form-data">
-								<div class="form-group">
-									<label>Numéro Article:</label>
-									<input value=<?php echo $res->num_article;?> name="num_article" class="form-control" placeholder="Placeholder">
-								</div>
+<form role="form" action="index.controller.php?action=edit&controller=article&id=<?php echo $res->id; ?>" method="post"  controller="article" enctype="multipart/form-data">
 																
 								<div class="form-group">
 									<label>Libéllé Article</label>

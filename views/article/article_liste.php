@@ -23,7 +23,7 @@
 						<table class="table table-bordered" data-toggle="tablee"   data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-search="true"  data-pagination="true" data-sort-name="name" data-sort-order="desc">
 						    <thead>
 						    <tr>
-						        <th data-field="num" data-checkbox="true" >Numéro</th>
+						        
 						        <th data-field="lib" data-sortable="true">Libellé</th>
 						        <th data-field="pHT"  data-sortable="true">Prix vente HT</th>
 								<th data-field="TVA"  data-sortable="true">TVA</th>
@@ -37,9 +37,10 @@
 							<?php  
 							//var_dump($res);
 							foreach($res as $article){
+								//var_dump($article);
 							?>		
+							
 							<tr>
-							<td><?php echo $article->num_article; ?></td>
 							<td> <?php echo $article->lib_article; ?></td>
 							<td><?php echo $article->prix_HT; ?></td>
 							<td><?php echo $article->TVA; ?></td>
