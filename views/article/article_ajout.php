@@ -61,8 +61,8 @@
 									<textarea name="description_article" class="form-control" rows="3"></textarea>
 								</div>
 								
-								<input  type="submit" class="btn btn-primary" value="Submit Button"/>
-								<button  type="reset" class="btn btn-default">Reset Button</button>
+								<input  type="submit" class="btn btn-primary" value="Ajouter article"/>
+								<button  type="reset" class="btn btn-default">Réinitialisern</button>
 							</div>
 						</form>
 					</div>

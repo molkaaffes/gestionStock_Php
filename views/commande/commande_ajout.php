@@ -36,7 +36,7 @@
 																
 							<button style="float:left;margin-top:2vw" type="reset" class="btn btn-default">Réinitialiser</button>
 								<!--	<a class="btn btn-success" href="index.controller.php?controller=commande&action=verif" style="margin-top:2vw;" role="button">Vérifier</a>-->
-								<input  type="submit" class="btn btn-primary" value="Submit Button"/>
+								<input  type="submit" class="btn btn-primary" value="Ajouter commande" style="margin-top:2vw;"/>
 							</div>
 							<div class="col-md-6">
 							
