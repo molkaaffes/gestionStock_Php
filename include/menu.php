@@ -79,8 +79,7 @@
 					</li>
 				</ul>
 			</li>
-			<li role="presentation" class="divider"></li>
-			<li><a href="index.controller.php?action=login1&controller=admin"><svg class="glyph stroked male-user"></svg> Login Page</a></li>
+			
 		</ul>
 
 	</div><!--/.sidebar-->
