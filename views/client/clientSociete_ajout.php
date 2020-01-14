@@ -14,31 +14,32 @@
 				<div class="panel-heading">Ajout d'une société</div>
 					<div class="panel-body">
 						<div class="col-md-6">
-							<form role="form"  method="post"  controller="client" enctype="multipart/form-data">
+						<form role="form" action="index.controller.php?action=ajoutPhysique&controller=client" method="post"  controller="client" enctype="multipart/form-data" >
 							
 								<div class="form-group">
-									<label>Nom Société:</label>
+									<label>Nom Societé :</label>
 									<input class="form-control" name="nom_client" placeholder="Placeholder" required>
 								</div>
 																
-								<div class="form-group">
+								<div class="form-group" >
 									<label>Matricule fiscale:</label>
-									<input class="form-control" name="mat_fiscale"  placeholder="Placeholder" required>
+									<input class="form-control" name="mat_fiscale"   placeholder="Placeholder">
+								</div>	
+								
+							
+								<div class="form-group">
+									<label>Numero de téléphone : </label>
+									<input class="form-control" name="num_tel"  placeholder="Placeholder" required>
 								</div>
 								
 								<div class="form-group">
-									<label>Numero de téléphone:</label>
-									<input class="form-control" name="num_tel"   placeholder="Placeholder" required>
-								</div>
-								
-								<div class="form-group">
-									<label>Adresse:</label>
+									<label>Adresse :</label>
 									<input class="form-control" name="adr_client" placeholder="Placeholder" required>
 								</div>
 
 
-                                <button  type="submit" class="btn btn-primary" value="Submit Button">Submit Button</button>
-								<button  type="reset" class="btn btn-default">Reset Button</button>
+                                <button  type="submit" class="btn btn-primary" value="Submit Button">Ajouter</button>
+								<button  type="reset" class="btn btn-default">Réinitialiser</button>
 								
 								
 								 <div class="form-group" style=" visibility:hidden"  >

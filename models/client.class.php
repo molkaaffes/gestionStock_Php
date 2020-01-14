@@ -30,7 +30,7 @@ public function __construct($id,$num_tel,$adr_client,$type_id,$mat_fiscale,$mat_
 	
 		$cnx -> exec("insert into client (num_tel,adr_client,type_id,mat_client,nom_client,prenom_client ) 
 		values('".$this->num_tel."','".$this->adr_client."','".$this->type_id."','".$this->mat_client."','".$this->nom_client."','".$this->prenom_client."')");	
-		include "Views/client/clientPhysique_ajout.php";
+		header("location:index.controller.php?controller=client&action=listePhysique");
 	}
 
 	public function addSociete($cnx)
@@ -38,8 +38,8 @@ public function __construct($id,$num_tel,$adr_client,$type_id,$mat_fiscale,$mat_
 
 		$cnx -> exec("insert into client (num_tel,adr_client,type_id,mat_fiscale,nom_client ) 
 		values('".$this->num_tel."','".$this->adr_client."','".$this->type_id."','".$this->mat_fiscale."','".$this->nom_client."')");	
-	//	var_dump($cnx) ;
-	//	include "Views/client/clientPhysique_ajout.php";
+	
+		header("location:index.controller.php?controller=client&action=listeSociete");
 	}
 
 
@@ -63,7 +63,7 @@ public function __construct($id,$num_tel,$adr_client,$type_id,$mat_fiscale,$mat_
 	{
 		$sql =("delete from client where id='".$this->id."'");
 		$nb = $cnx->exec($sql);
-		header("location:index.controller.php?controller=client&action=listePhysique");
+		header("location:index.controller.php?controller=client&action=listeSociete");
 	}
 
 

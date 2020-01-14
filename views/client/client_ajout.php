@@ -54,10 +54,11 @@ form.addEventListener("submit", function(event) {
     output = entry[0] + "=" + entry[1] + "\r";
 	if(entry[1]=='0')
 	{
-		window.location.href ="index.controller.php?action=ajoutSociete&controller=client"
+		
+		window.location.href ="index.controller.php?action=pageajoutSociete&controller=client"
 	}
 	else {
-		window.location.href ="index.controller.php?action=ajoutPhysique&controller=client"
+		window.location.href ="index.controller.php?action=pageajoutPhysique&controller=client"
 	}
   };
   

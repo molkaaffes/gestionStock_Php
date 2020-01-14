@@ -9,7 +9,6 @@
 		</div><!--/.row-->
 		
 		
-		<!-- action="index.controller.php?action=afficheForm&controller=client" -->
         
 <div class="row">
 			<div class="col-lg-12">
@@ -17,7 +16,7 @@
 				<div class="panel-heading">Ajout d'une personne</div>
 					<div class="panel-body">
 						<div class="col-md-6">
-							<form role="form"  method="post"  controller="client" enctype="multipart/form-data" >
+							<form role="form" action="index.controller.php?action=ajoutSociete&controller=client" method="post"  controller="client" enctype="multipart/form-data" >
 							
 								<div class="form-group">
 									<label>Nom :</label>
@@ -44,8 +43,8 @@
 									<input class="form-control" name="adr_client" placeholder="Placeholder" required>
 								</div>
 
-                                <button  type="submit" class="btn btn-primary" value="Submit Button">Submit Button</button>
-								<button  type="reset" class="btn btn-default">Reset Button</button>		
+                                <button  type="submit" class="btn btn-primary" value="Submit Button">Ajouter</button>
+								<button  type="reset" class="btn btn-default">Réinitialiser</button>		
 
                                 <div class="form-group" style=" visibility:hidden">
 									<label>type_id:</label>
