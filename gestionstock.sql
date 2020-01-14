@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 13 jan. 2020 à 23:38
+-- Généré le :  mar. 14 jan. 2020 à 20:46
 -- Version du serveur :  10.1.38-MariaDB
 -- Version de PHP :  7.3.4
 
@@ -46,9 +46,11 @@ CREATE TABLE `article` (
 --
 
 INSERT INTO `article` (`id`, `lib_article`, `prix_HT`, `TVA`, `qte_article`, `photo_article`, `description_article`, `num_artcile`, `id_remise`, `id_cat`) VALUES
-(129, 'article algesic', 9, 2, 10, 'pY0h3Bc5.png', 'medicament', 'A001', 0, 0),
-(130, 'AZERTYU', 0, 0, 0, '', '', '', 0, 0),
-(131, 'AZERTYU', 0, 0, 0, '', '', '', 0, 0);
+(129, 'article 12', 9, 2, 10, '', 'medicament', 'A001', 0, 0),
+(130, 'article 2', 0, 1, 0, '', 'med', 'a002', 0, 0),
+(131, 'article 3', 0, 0, 0, 'pY0h3Bc5.png', 'med', 'a003', 0, 0),
+(135, 'adol', 10, 3, 10, 'pWYlM4rF.png', 'mal', '', 0, 0),
+(138, 'test', 3, 20, 20, '7MYrR2zP.png', 'tester ceci', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -98,16 +100,6 @@ CREATE TABLE `client` (
   `prenom_client` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `client`
---
-
-INSERT INTO `client` (`id`, `num_tel`, `adr_client`, `type_id`, `mat_fiscale`, `mat_client`, `nom_client`, `prenom_client`) VALUES
-(1, '', 0, '', 0, 0, '', ''),
-(2, '21579007', 0, '1', 11111, 0, 'envision', ''),
-(3, '', 0, '', 0, 0, '', ''),
-(4, '77777', 0, '0', 0, 0, 'dfghjkl', 'ttt');
-
 -- --------------------------------------------------------
 
 --
@@ -121,6 +113,14 @@ CREATE TABLE `commande` (
   `id_client` int(10) NOT NULL,
   `num_cmd` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `commande`
+--
+
+INSERT INTO `commande` (`id`, `date_commande`, `adresse_livraison`, `id_client`, `num_cmd`) VALUES
+(2, '2020-01-01', 'tanyor km2', 0, 'cmd_01'),
+(3, '2020-01-14', 'tanyor km2 ', 0, 'cmd_011');
 
 -- --------------------------------------------------------
 
@@ -137,6 +137,14 @@ CREATE TABLE `details_commande` (
   `id_commande` int(10) NOT NULL,
   `id_article` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `details_commande`
+--
+
+INSERT INTO `details_commande` (`id`, `qte_commande`, `prix_unitaire`, `taux_remise_accorde`, `TVA`, `id_commande`, `id_article`) VALUES
+(1, 3, 0, 0, 20, 0, 130),
+(2, 3, 10, 0, 20, 0, 135);
 
 -- --------------------------------------------------------
 
@@ -170,9 +178,18 @@ CREATE TABLE `reglement` (
   `num_cheq` varchar(10) NOT NULL,
   `nom_banque` varchar(20) NOT NULL,
   `nom_client` varchar(20) NOT NULL,
-  `date_echenace` date NOT NULL,
+  `date_echeance` date NOT NULL,
   `num_traite` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `reglement`
+--
+
+INSERT INTO `reglement` (`id`, `montant`, `type_reglement`, `num_cheq`, `nom_banque`, `nom_client`, `date_echeance`, `num_traite`) VALUES
+(2, 400, 't', '', 'UBCI', 'Molka', '2020-01-23', '789'),
+(30, 100000, 'c', '0047', 'Biat', 'Issam', '2020-12-12', ''),
+(31, 50000, 'c', '00089', 'ATB', 'Saadia', '2020-05-14', '');
 
 -- --------------------------------------------------------
 
@@ -287,7 +304,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
 -- AUTO_INCREMENT pour la table `bon_livraison`
@@ -305,19 +322,19 @@ ALTER TABLE `categorie`
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `commande`
 --
 ALTER TABLE `commande`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `details_commande`
 --
 ALTER TABLE `details_commande`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `facture`
@@ -329,7 +346,7 @@ ALTER TABLE `facture`
 -- AUTO_INCREMENT pour la table `reglement`
 --
 ALTER TABLE `reglement`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT pour la table `remise`
