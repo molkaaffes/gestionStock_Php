@@ -26,13 +26,13 @@ public function __construct($id_article,$lib_article,$prix_HT,$TVA,$qte_article,
 	
 	public function add($cnx)
 	{
-		$cnx -> exec("insert into article (lib_article,prix_HT, TVA,qte_article,photo_article,description_article,num_article ) values('".$this->lib_article."','".$this->prix_HT."','".$this->TVA."','".$this->qte_article."','".$this->photo_article."','".$this->description_article."','".$this->num_article."')");	
+		$cnx -> exec("insert into article (lib_article,prix_HT, TVA,qte_article,photo_article,description_article ) values('".$this->lib_article."','".$this->prix_HT."','".$this->TVA."','".$this->qte_article."','".$this->photo_article."','".$this->description_article."')");	
 		$query = 'SELECT * FROM article';
-		$tab=$cnx->query($query)->fetchAll(PDO::FETCH_OBJ);
+		$res=$cnx->query($query)->fetchAll(PDO::FETCH_OBJ);
 		include "Views/article/article_liste.php";
 		//return View("views/article_liste.php", tab);
 		//return RedirectToAction("liste");
-		header("location:index.controller.php?action=afficheForm&controller=article");
+		header("location:index.controller.php?action=liste&controller=article");
 	//	return Redirect::back()->with('msg', 'succs');
 		
 	}

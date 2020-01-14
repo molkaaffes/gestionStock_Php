@@ -35,13 +35,15 @@
 								<th data-field="adresse_livraison" data-sortable="true">Action</th>
 						    </tr>							
 							</thead>
-							<?php foreach ( $_SESSION['commande']  as $cmd ){ ?>
+							<?php foreach ( $res  as $cmd ){ 
+							//	var_dump($cmd);?>
+								
 							<tr>
-								<td><?php  echo $cmd['num_cmdd']; ?></td>
-								<td><?php print_r($cmd['date_commande']) ; ?></td>
-								<td><?php print_r($cmd['id_client']) ; ?></td>
-								<td><?php print_r("'cc'") ; ?></td>
-								<td><?php print_r($_SESSION['adresse_livraison']) ; ?></td>								
+								<td><?php  echo $cmd->num_cmd; ?></td>
+								<td><?php print_r($cmd->date_commande) ; ?></td>
+								<td><?php print_r($cmd->id_client) ; ?></td>
+								<td><?php print_r("envision") ; ?></td>
+								<td><?php print_r($cmd->adresse_livraison) ; ?></td>								
 								<td>
 								<a href="index.controller.php?controller=commande&action=addDetails">Ajout Article</a>
 								<a href="index.controller.php?controller=commande&action=supp">Delte</a>

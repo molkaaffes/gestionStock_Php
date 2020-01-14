@@ -79,7 +79,7 @@ $commande=new commande($id_commande,$date_commande,$adresse_livraison,$id_client
 $article=new article($id_article,$lib_article,$prix_HT,$TVA,$qte_article,$photo_article,$description_article,$num_article);
 $details_Commande=new detailsCommande($id_detailsCommande,$article_r,$quantite_cmd,$prix_unitaire,$taux_remise_accorde,$TVA);
 switch($action){
-	case "liste"://$res=$commande->liste($cnx);
+	case "liste":$res=$commande->liste($cnx);
 		include "views/commande/commande_liste.php";
 	break;
 	

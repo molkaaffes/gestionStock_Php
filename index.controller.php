@@ -6,8 +6,10 @@ if (isset($_SESSION))
    { 
     // Unset all of the session variables.
     $_SESSION['commande']=array();
+    $_SESSION['auth']=true;
    }
    session_start();
+ //  $_SESSION['auth']=false;
 
 //print_r ($_SESSION);
 
@@ -35,6 +37,7 @@ if($_SESSION['auth']==true )
 }else{
     $controller="admin";
     $action="logout";
+  ///  header("location:index.controller.php?controller=admin&action=logout");
 }
  ?> 
 
